@@ -30,5 +30,9 @@ public class Autor {
     @OneToMany(mappedBy = "autor", cascade = CascadeType.ALL)
     @JsonManagedReference(value = "autor-libro")
     private List<Libro> libros;
-
+    
+    @JsonBackReference(value = "autor-detalles")
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "id_detalles", nullable = false)
+    private Detalles detalles;
 }

@@ -47,4 +47,10 @@ public class Libro {
     @JsonManagedReference(value = "prestamo-libro")
     @OneToMany(mappedBy = "libro", cascade = CascadeType.ALL)
     private List<Prestamo> prestamos;
+    
+    
+    @JsonBackReference(value = "detalles-libro")
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "id_detalles", nullable = false)
+    private Detalles detalles;
 }

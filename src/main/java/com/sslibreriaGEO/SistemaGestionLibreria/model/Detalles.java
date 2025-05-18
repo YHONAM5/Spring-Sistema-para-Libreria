@@ -47,6 +47,42 @@ public class Detalles {
     @JsonManagedReference(value = "detalles-autor")
     @OneToMany(mappedBy = "detalles", cascade = CascadeType.ALL)
     private List<Autor> autor;
+
+	public Detalles(int id_detalles, int montoLibro, LocalDate fechaCompra, List<Libro> libro, List<Autor> autor) {
+		super();
+		this.id_detalles = id_detalles;
+		this.montoLibro = montoLibro;
+		this.fechaCompra = fechaCompra;
+		this.libro = libro;
+		this.autor = autor;
+	}
+
+	public Detalles() {
+		super();
+	}
+
+	public void setId_detalles(int id_detalles) {
+		this.id_detalles = id_detalles;
+	}
+
+	public void setMontoLibro(int montoLibro) {
+		this.montoLibro = montoLibro;
+	}
+
+	public void setFechaCompra(LocalDate fechaCompra) {
+		this.fechaCompra = fechaCompra;
+	}
+
+	public void setLibro(List<Libro> libro) {
+		this.libro = libro;
+	}
+
+	public void setAutor(List<Autor> autor) {
+		this.autor = autor;
+	}
+    
+    
+    
     
     
 }
